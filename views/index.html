@@ -2,11 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<title>Open Weather Map Project</title>
 </head>
 <body>
-<button onclick="loadWeather()">Click me!</button>
-<p id="myDiv"></p>
+<header>
 
+</header>
+<div id="content">
+	Enter the name of your desired city:
+	<input id="cityName" type="text" placeholder="e.g. Leeds">
+	<button onclick="loadWeather()">What's the weather?</button>
+
+	<p id="weather_results"></p>
+</div>
 <footer>
 	<script type="text/javascript" src="../assets/js/main.js"></script>
 </footer>

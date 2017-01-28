@@ -10,19 +10,19 @@ function loadWeather() {
 	weatherCall.onreadystatechange = function() {
     if( weatherCall.readyState == XMLHttpRequest.DONE ) {
 	 		if( weatherCall.status == 200 ) {
+        document.getElementById( "error_message" ).style.display = "none";
         obj = weatherCall.responseText;
         data = JSON.parse(obj);
-        document.getElementById( "weather_results" ).innerHTML = obj; // write out json to screen
         // Get the icon code for the weather type and store it
         var weatherIcon = data.weather[0].icon;
         // Create variable to use to get the icon url
-        var imageString = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
+        var imageString = '<img src="http://openweathermap.org/img/w/' + weatherIcon + '.png" />';
         // Time data is captured
         console.log(data.dt);
         // Weather (type, brief description, icon)
-        console.log(data.weather[0].main);
-        console.log(data.weather[0].description);
-        console.log(imageString);
+        document.getElementById( "weather_type" ).innerHTML = data.weather[0].main;
+        document.getElementById( "weather_description" ).innerHTML = data.weather[0].description;
+        document.getElementById( "weather_image" ).innerHTML = imageString;
         // Temperature, Pressure, Humidity
         console.log(data.main.temp);
         console.log(data.main.pressure);
@@ -46,9 +46,12 @@ function loadWeather() {
       }
     	else if( weatherCall.status == 400 ) {
         alert( 'There was an error 400' );
+        document.getElementById( "error_message" ).innerHTML = "Uh oh. Something has gone wrong on our end. Please try again later, or alternatively contact a system administrator.";
+        document.getElementById( "error_message" ).style.display = "block";
       }
     	else {
-      	alert( 'something else other than 200 was returned' );
+      	document.getElementById( "error_message" ).innerHTML = "Oops, we were unable to find the weather for that region. Please enter a new city name or post code.";
+        document.getElementById( "error_message" ).style.display = "block";
       }
     }
   };

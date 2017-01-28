@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Open Weather Map Project</title>
 </head>
 <body>
-<header>
-
+<header class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 id="title">Open Weather Map Project</h1>
+		</div>
+	</div>
 </header>
-<div id="content">
-	Enter the name of your desired city:
-	<input id="cityName" type="text" placeholder="e.g. Leeds">
-	<button onclick="loadWeather()">What's the weather?</button>
+<div id="content" class="container">
+	<div class="row">
+		<div class="col-xs-12" id="weather_results">
+			<h2>Wondering what the weather is?</h2>
+			<p>Simply enter the name of a city, or a postcode in the box below and click the button to find out.</p>
+			<input id="cityName" type="text" placeholder="e.g. Leeds or LS16 5RP">
+			<button onclick="loadWeather()">Please tell me it's sunny!</button>
 
-	<p id="weather_results"></p>
+			<div id="error_message"></div>
+
+			<div class="col-xs-12" id="weather_image">
+			</div>
+			<div class="col-xs-6" id="weather_type">
+			</div>
+			<div class="col-xs-6" id="weather_description">
+			</div>
+
+		</div>
+	</div>
 </div>
 <footer>
 	<script type="text/javascript" src="../assets/js/main.js"></script>

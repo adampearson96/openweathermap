@@ -29,6 +29,12 @@ button {
 button:hover {
 	background-color: #50e3c2;
 }
+a {
+	color: #73FFE0;
+}
+a:hover {
+	color: #50E3C2;
+}
 /* Header styling */
 header {
 	background-color: #50e3c2;
@@ -43,5 +49,41 @@ h1#title {
 	background-color: #FF9494;
 	padding: 15px;
 	color: #fff;
-	display: none;
+}
+
+/* Results styling */
+#primary_weather_results {
+	margin: 15px 0;
+	text-align: center;
+}
+table#secondary_weather_results {
+	text-align: left;
+}
+table#secondary_weather_results th {
+	background-color: #b9b9b9;
+	width: 50%;
+	padding: 5px 10px 5px 5px;
+}
+table#secondary_weather_results td {
+	width: 50%;
+}
+
+/* Footer styling */
+footer {
+	font-size: 10px;
+	color: #b9b9b9;
+	margin: 15px 0;
+	text-align: center;
+}
+
+@media screen and ( min-width: 768px ) {
+	#weather_results {
+		text-align: center;
+	}
+	table#secondary_weather_results {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
 }

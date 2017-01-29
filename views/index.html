@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Open Weather Map Project</title>
 </head>
-<body>
+<body onload="hideFields()">
 <header class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12">
@@ -16,25 +16,75 @@
 </header>
 <div id="content" class="container">
 	<div class="row">
-		<div class="col-xs-12" id="weather_results">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2" id="weather_results">
 			<h2>Wondering what the weather is?</h2>
 			<p>Simply enter the name of a city, or a postcode in the box below and click the button to find out.</p>
 			<input id="cityName" type="text" placeholder="e.g. Leeds or LS16 5RP">
 			<button onclick="loadWeather()">Please tell me it's sunny!</button>
-
 			<div id="error_message"></div>
+			<div id="primary_weather_results">
+				<h3>We took the following readings at</h3>
+				<div id="weather_time"></div>
+				<div id="weather_icon"></div>			
+				<div id="weather_temperature"></div>
+				<div id="weather_type"></div>
+				<div id="weather_city"></div>
+			</div>
 
-			<div class="col-xs-12" id="weather_image">
-			</div>
-			<div class="col-xs-6" id="weather_type">
-			</div>
-			<div class="col-xs-6" id="weather_description">
-			</div>
+			<table id="secondary_weather_results">
+				<tbody>
+					<tr>
+						<th>Description</th>
+						<td id="weather_description"></td>
+					</tr>
+					<tr>
+						<th>Pressure</th>
+						<td id="weather_pressure"></td>
+					</tr>
+					<tr>
+						<th>Humidity</th>
+						<td id="weather_humidity"></td>
+					</tr>
+					<tr>
+						<th>Wind Speed</th>
+						<td id="weather_wind_speed"></td>
+					</tr>
+					<tr>
+						<th>Wind Direction</th>
+						<td id="weather_wind_direction"></td>
+					</tr>
+					<tr>
+						<th>Cloudiness</th>
+						<td id="weather_cloudiness"></td>
+					</tr>
+					<tr>
+						<th>Rainfall</th>
+						<td id="weather_rainfall"></td>
+					</tr>
+					<tr>
+						<th>Snowfall</th>
+						<td id="weather_snowfall"></td>
+					</tr>
+					<tr>
+						<th>Sunset</th>
+						<td id="weather_sunset"></td>
+					</tr>
+					<tr>
+						<th>Sunrise</th>
+						<td id="weather_sunrise"></td>
+					</tr>
+				</tbody>
+			</table>
 
 		</div>
 	</div>
 </div>
-<footer>
+<footer class="container">
+	<div class="row">
+		<div class="col-xs-12" id="disclaimer">
+			All weather results are provided via <a href="https://openweathermap.org" target="_blank">https://openweathermap.org</a>.
+		</div>
+	</div>
 	<script type="text/javascript" src="../assets/js/main.js"></script>
 </footer>
 </body>

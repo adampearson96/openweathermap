@@ -3,6 +3,11 @@ function hideFields() {
   document.getElementById( "primary_weather_results" ).style.display = "none";
   document.getElementById( "secondary_weather_results" ).style.display = "none";
   document.getElementById( "error_message" ).style.display = "none";
+  document.getElementById( "city_search_form" ).addEventListener( 'submit', 
+    function(event) {
+      event.preventDefault();
+    }
+  );
 }
 function loadWeather() {
   "use strict";
@@ -19,9 +24,9 @@ function loadWeather() {
         document.getElementById( "primary_weather_results" ).style.display = "block";
         document.getElementById( "secondary_weather_results" ).style.display = "block";
         // Get response from API call
-        obj = weatherCall.responseText;
+        var obj = weatherCall.responseText;
         // Parse JSON
-        data = JSON.parse(obj);
+        var data = JSON.parse(obj);
         // Create Weather Variables
         var weatherTime = new Date( data.dt * 1000 ); // Time weather data was taken
         var weatherType = data.weather[0].main; // Weather Type (e.g. Sunny)
@@ -31,7 +36,7 @@ function loadWeather() {
         var weatherPressure = data.main.pressure + " hPa"; // Atmospheric Pressure (hPa)
         var weatherHumidity = data.main.humidity + "%"; // Humidity (%)
         var weatherWindSpeed = data.wind.speed; // Wind Speed (Defaults to meters/second)
-        var weatherWindDirection = data.wind.deg + "degrees"; // Wind Direction (degrees, meteorological)
+        var weatherWindDirection = data.wind.deg + " degrees"; // Wind Direction (degrees, meteorological)
         var weatherCloudiness = data.clouds.all + "%"; // Cloudiness (%)
         var weatherRainfall = data.rain; // Rain volume in the last 3 hours
         var weatherSnowfall = data.snow; // Snow volume in the last 3 hours

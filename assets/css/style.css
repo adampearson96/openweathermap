@@ -14,10 +14,13 @@ body {
   background-color: #ffffff;
   margin: 0;
 }
+form {
+	margin: 50px 0 0 0;
+}
 input {
 	border: none;
 	padding: 15px;
-	background-color: #efefef;
+	background-color: #ffffff;
 	width: 100%;
 }
 button {
@@ -27,13 +30,13 @@ button {
 	width: 100%;
 }
 button:hover {
-	background-color: #50e3c2;
+	background-color: #3FB299;
 }
 a {
 	color: #73FFE0;
 }
 a:hover {
-	color: #50E3C2;
+	color: #3FB299;
 }
 /* Header styling */
 header {
@@ -52,6 +55,12 @@ h1#title {
 }
 
 /* Results styling */
+#left_hand_side {
+	background-color: #50e3c2;
+	padding-bottom: 100px;
+}
+
+
 #primary_weather_results {
 	margin: 15px 0;
 	text-align: center;
@@ -77,6 +86,11 @@ footer {
 }
 
 @media screen and ( min-width: 768px ) {
+	body {
+		background:-webkit-linear-gradient(left, #50e3c2 0%, #50e3c2 50%, #ffffff 50%, #ffffff 100%);
+		background:-o-linear-gradient(left, #50e3c2 0%, #50e3c2 50%, #ffffff 50%, #ffffff 100%);
+		background:linear-gradient(to right, #50e3c2 0%, #50e3c2 50%, #ffffff 50%, #ffffff 100%);; ;
+	}
 	#weather_results {
 		text-align: center;
 	}

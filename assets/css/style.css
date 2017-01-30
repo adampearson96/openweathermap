@@ -53,14 +53,11 @@ h1#title {
 	padding: 15px;
 	color: #fff;
 }
-
 /* Results styling */
 #left_hand_side {
 	background-color: #50e3c2;
 	padding-bottom: 100px;
 }
-
-
 #primary_weather_results {
 	margin: 15px 0;
 	text-align: center;
@@ -76,7 +73,6 @@ table#secondary_weather_results th {
 table#secondary_weather_results td {
 	width: 50%;
 }
-
 /* Footer styling */
 footer {
 	font-size: 10px;
@@ -84,12 +80,14 @@ footer {
 	margin: 15px 0;
 	text-align: center;
 }
-
 @media screen and ( min-width: 768px ) {
 	body {
 		background:-webkit-linear-gradient(left, #50e3c2 0%, #50e3c2 50%, #ffffff 50%, #ffffff 100%);
 		background:-o-linear-gradient(left, #50e3c2 0%, #50e3c2 50%, #ffffff 50%, #ffffff 100%);
 		background:linear-gradient(to right, #50e3c2 0%, #50e3c2 50%, #ffffff 50%, #ffffff 100%);; ;
+	}
+	form {
+		margin: 100px 0 0 0;
 	}
 	#weather_results {
 		text-align: center;
